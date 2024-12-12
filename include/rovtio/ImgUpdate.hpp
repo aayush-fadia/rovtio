@@ -43,6 +43,7 @@
 #include <algorithm> // Custom to sort
 #include <chrono>
 #include <array>
+#include <opencv2/imgproc.hpp>
 
 namespace rovtio {
 
@@ -681,7 +682,7 @@ namespace rovtio {
         else
           meas.aux().pyr_[meas.aux().activeModality_].imgs_[0].convertTo(tmpImg, CV_8UC1);
         //Convert Image to color for drawing purposes
-        cvtColor(tmpImg, filterState.img_[meas.aux().activeModality_], CV_GRAY2RGB);
+        cvtColor(tmpImg, filterState.img_[meas.aux().activeModality_], cv::COLOR_GRAY2RGB);
       }
       filterState.imgTime_ = filterState.t_;
       filterState.imageCounter_++;

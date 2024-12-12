@@ -42,7 +42,7 @@ class RovioScene{
   typedef typename mtFilterState::mtState mtState;
   std::shared_ptr<FILTER> mpFilter_;
 
-  rovio::Scene mScene;
+  rovtio::Scene mScene;
   cv::Mat patch_;
   std::shared_ptr<SceneObject> mpSensor_[mtState::nCam_];
   std::shared_ptr<SceneObject> mpGroundtruth_;
@@ -54,7 +54,7 @@ class RovioScene{
   }
   virtual ~RovioScene(){};
   void addKeyboardCB(unsigned char Key, std::function<void()> f){
-    mScene.addKeyboardCB(Key,f);
+    mpScene.addKeyboardCB(Key,f);
   }
   void addSpecialKeyboardCB(int Key, std::function<void()> f){
     mScene.addSpecialKeyboardCB(Key,f);
